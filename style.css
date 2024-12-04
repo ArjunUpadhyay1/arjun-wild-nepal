@@ -511,7 +511,36 @@ form .btn2 {
     color: #ff004f;
 }
 
+    
+.subscriber-count-container {
+color: rgb(225, 248, 248);
+    width: 36%;
+  text-align: center;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(213, 237, 245, 0.1);
+  background: rgba(25, 25, 26, 0.678);
+  font-family: Arial, sans-serif;
+}
 
+.channel-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+#channel-logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.subscriber-count {
+  font-size: 2rem;
+  margin-top: 20px;
+  color: #8fdcfa; /* YouTube red */
+}
 /*-----------small screen display-------------*/
 
 nav .fa-solid {
