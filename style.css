@@ -541,6 +541,11 @@ color: rgb(225, 248, 248);
   margin-top: 20px;
   color: #8fdcfa; /* YouTube red */
 }
+.mantha{
+     margin-top: 435px;
+    margin-left: 530px;
+    position: absolute;
+}
 /*-----------small screen display-------------*/
 
 nav .fa-solid {
@@ -717,7 +722,12 @@ nav .fa-solid {
     display: block;
     padding-bottom: 6%;
 }
-
+.mantha{
+       margin-top: 470px;
+        margin-left: 355px;
+        position: absolute;
+        
+    }
 #msg {
     color: #61b752;
     margin-top: -40px;
