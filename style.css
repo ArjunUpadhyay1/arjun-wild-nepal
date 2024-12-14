@@ -567,7 +567,7 @@ nav .fa-solid {
         font-size: 25px;
     }
     .header-text h1 {
-        font-size: 34px;
+        font-size: 25px;
     }
     .header-text h1 span {
         background: linear-gradient(to right, rgba(255, 0, 79, 1) 38%, rgb(23, 55, 218) 77%);
@@ -722,12 +722,7 @@ nav .fa-solid {
     display: block;
     padding-bottom: 6%;
 }
-.mantha{
-       margin-top: 470px;
-        margin-left: 355px;
-        position: absolute;
-        
-    }
+
 #msg {
     color: #61b752;
     margin-top: -40px;
