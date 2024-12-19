@@ -588,7 +588,59 @@ async function fetchSubscriberCount() {
 }
 setInterval(fetchSubscriberCount, 5000);
 fetchSubscriberCount();
+document.addEventListener('DOMContentLoaded', () => {
+    const loaderContainer = document.querySelector('.loader-container');
+    const websiteContent = document.querySelector('.website-content');
+    const progressFill = document.querySelector('.progress-fill');
 
+    function simulateLoadingBasedOnSpeed() {
+        return new Promise((resolve) => {
+            let duration = 3000; // Default duration in milliseconds
+
+            // Check if the Network Information API is available
+            if ('connection' in navigator && 'effectiveType' in navigator.connection) {
+                const connection = navigator.connection;
+                switch (connection.effectiveType) {
+                    case 'slow-2g':
+                        duration = 10000;
+                        break;
+                    case '2g':
+                        duration = 7000;
+                        break;
+                    case '3g':
+                        duration = 5000;
+                        break;
+                    case '4g':
+                        duration = 3000;
+                        break;
+                    default:
+                        duration = 3000;
+                }
+            }
+
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += 1;
+                progressFill.style.width = `${progress}%`;
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    resolve();
+                }
+            }, duration / 100);
+        });
+    }
+
+    simulateLoadingBasedOnSpeed().then(() => {
+        loaderContainer.style.opacity = '0';
+        loaderContainer.style.pointerEvents = 'none';
+        websiteContent.style.opacity = '1';
+    }).catch((error) => {
+        console.error('Error during loading:', error);
+        loaderContainer.style.opacity = '0';
+        loaderContainer.style.pointerEvents = 'none';
+        websiteContent.style.opacity = '1';
+    });
+});
   </script>
 
 </body>
