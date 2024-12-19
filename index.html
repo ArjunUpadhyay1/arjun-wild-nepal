@@ -251,7 +251,7 @@ footer {
                     stroke-linejoin="round"
                 />
             </svg>
-            <div class="loading-text">Loading</div>
+            <div class="loading-text">arjunupadhyaya.com.np is loading..</div>
             <div class="progress-bar">
                 <div class="progress-fill"></div>
             </div>
@@ -588,7 +588,10 @@ async function fetchSubscriberCount() {
 }
 setInterval(fetchSubscriberCount, 5000);
 fetchSubscriberCount();
-document.addEventListener('DOMContentLoaded', () => {
+
+  </script>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
     const loaderContainer = document.querySelector('.loader-container');
     const websiteContent = document.querySelector('.website-content');
     const progressFill = document.querySelector('.progress-fill');
@@ -641,8 +644,7 @@ document.addEventListener('DOMContentLoaded', () => {
         websiteContent.style.opacity = '1';
     });
 });
-  </script>
-
+    </script>
 </body>
 
 </html>
