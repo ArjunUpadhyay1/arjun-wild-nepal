@@ -34,11 +34,6 @@ a:hover{
         transform: translateY(-20px);
     }
 }
-.logo {
-        width: 60%;
-        height: 60%;
-        border-radius: 100%;
-}
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -669,15 +664,6 @@ nav .fa-solid {
         background-color: #00a6d9;
         /* Slightly darker on hover */
     }
-    .logo {
-        width: 50px;
-        height: 50px;
-        margin-top: -10px;
-        margin-left: -10px;
-        border-radius: 50%;
-       
-    }
-   
     .animated {
         animation-duration: 2.5s;
         animation-fill-mode: both;
