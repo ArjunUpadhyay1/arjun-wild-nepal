@@ -13,6 +13,7 @@ body {
     background-color: #262626;
     color: #fff;
 }
+
 .logo {
    width: 100px;
    height: 80px;
@@ -42,6 +43,7 @@ a:hover{
         transform: translateY(-20px);
     }
 }
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -201,7 +203,7 @@ nav ul li a:hover::after {
 }
 
 .header-text {
-    margin-top: 36.8%;
+    margin-top: 35.8%;
     font-size: 30px;
 }
 
@@ -215,7 +217,11 @@ nav ul li a:hover::after {
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
 }
-
+.mantha{
+    margin-top: 444px;
+    margin-left: 530px;
+    position: absolute;
+}
 
 /* -------about-------- */
 
@@ -507,41 +513,7 @@ form .btn2 {
     color: #ff004f;
 }
 
-    
-.subscriber-count-container {
-color: rgb(225, 248, 248);
-    width: 36%;
-  text-align: center;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(213, 237, 245, 0.1);
-  background: rgba(25, 25, 26, 0.678);
-  font-family: Arial, sans-serif;
-}
 
-.channel-info {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
-}
-
-#channel-logo {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-}
-
-.subscriber-count {
-  font-size: 2rem;
-  margin-top: 20px;
-  color: #8fdcfa; /* YouTube red */
-}
-.mantha{
-     margin-top: 435px;
-    margin-left: 530px;
-    position: absolute;
-}
 /*-----------small screen display-------------*/
 
 nav .fa-solid {
@@ -563,7 +535,7 @@ nav .fa-solid {
         font-size: 25px;
     }
     .header-text h1 {
-        font-size: 25px;
+        font-size: 34px;
     }
     .header-text h1 span {
         background: linear-gradient(to right, rgba(255, 0, 79, 1) 38%, rgb(23, 55, 218) 77%);
@@ -672,6 +644,25 @@ nav .fa-solid {
         background-color: #00a6d9;
         /* Slightly darker on hover */
     }
+    .logo {
+        width: 80px;
+        height: 60px;
+        margin-top: -10px;
+        margin-left: -10px;
+        
+    }
+    @keyframes upDown {
+        0% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-5px);
+        }
+        /* Reduced the height of the movement */
+        100% {
+            transform: translateY(0);
+        }
+    }
     .animated {
         animation-duration: 2.5s;
         animation-fill-mode: both;
@@ -686,11 +677,10 @@ nav .fa-solid {
         animation-name: fadeInUp;
         -webkit-animation-name: fadeInUp;
     }
-    .logo {
-        width: 80px;
-        height: 60px;
-        margin-top: -10px;
-        margin-left: -10px;
+    .mantha{
+        margin-top: 474px;
+        margin-left: 355px;
+        position: absolute;
         
     }
 }
