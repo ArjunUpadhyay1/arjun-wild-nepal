@@ -34,7 +34,11 @@ a:hover{
         transform: translateY(-20px);
     }
 }
-
+.logo {
+        width: 60%;
+        height: 60%;
+        border-radius: 100%;
+}
 body {
     margin: 0;
     font-family: Arial, sans-serif;
