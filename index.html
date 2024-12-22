@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -78,101 +79,6 @@
     margin-left: 530px;
     position: absolute;
 }
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-}
-
-.loader-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #1a1a1a;
-    transition: opacity 0.5s ease-out;
-    z-index: 1000;
-}
-
-.a-wrapper {
-    position: relative;
-    width: 200px;
-    height: 200px;
-}
-
-.a-svg {
-    width: 100%;
-    height: 100%;
-    filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.7));
-}
-
-.a-path {
-    stroke: #00ffff;
-    stroke-dasharray: 300;
-    stroke-dashoffset: 300;
-    animation: drawA 2s ease-in-out infinite alternate;
-}
-
-.loading-text {
-    position: absolute;
-    bottom: -30px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 18px;
-    color: #00ffff;
-    text-transform: lowercase;
-    letter-spacing: 3px;
-    animation: pulse 1.5s ease-in-out infinite;
-}
-
-.progress-bar {
-    position: absolute;
-    bottom: -60px;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background-color: #333;
-    overflow: hidden;
-}
-
-.progress-fill {
-    height: 100%;
-    background-color: #00ffff;
-    width: 0;
-    transition: width 0.3s ease-out;
-}
-
-@keyframes drawA {
-    0% {
-        stroke-dashoffset: 300;
-    }
-    100% {
-        stroke-dashoffset: 0;
-    }
-}
-
-@keyframes pulse {
-    0%, 100% {
-        opacity: 0.5;
-    }
-    50% {
-        opacity: 1;
-    }
-}
-
-.website-content {
-    opacity: 0;
-    transition: opacity 0.5s ease-in;
-    background-color: #f0f0f0;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
 header {
     background-color: #333;
     color: white;
@@ -214,6 +120,39 @@ footer {
     text-align: center;
     padding: 1rem;
 }
+#loader-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #1a1a1a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        .loader {
+            width: 200px;
+            height: 200px;
+        }
+        .logo-stroke {
+            fill: none;
+            stroke-width: 8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-dasharray: 400;
+            stroke-dashoffset: 800;
+            animation: draw 3s ease-in-out forwards infinite;
+        }
+        @keyframes draw {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+        .gradient-stroke {
+            stroke: url(#gradient);
+        }
 @media only screen and (max-width: 600px){
   
 .subscriber-count-container {
@@ -238,25 +177,21 @@ footer {
 </head>
 
 <body>
-    <div class="loader-container">
-        <div class="a-wrapper">
-            <svg class="a-svg" viewBox="0 0 100 100" width="100" height="100">
-                <path
-                    class="a-path"
-                    d="M20,80 L50,20 L80,80 M30,60 L70,60"
-                    stroke="currentColor"
-                    stroke-width="8"
-                    fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                />
+    <div id="loader-overlay">
+        <div class="loader">
+            <svg viewBox="0 0 140 80">
+                <defs>
+                    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#ff00ff;stop-opacity:1" />
+                        <stop offset="50%" style="stop-color:#00ffff;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#ffff00;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                <path d="M10 70 L50 10 L90 70 M56 70 L10 70 M90 70 L130 70 L110 20" class="logo-stroke gradient-stroke" />
             </svg>
-            <div class="loading-text">arjunupadhyaya.com.np is loading..</div>
-            <div class="progress-bar">
-                <div class="progress-fill"></div>
-            </div>
         </div>
     </div>
+    <div id="your-website-content" style="display: none;">
     <div class="home-button" onclick="goToHome()">
         <i class="fas fa-home"></i>
     </div>
@@ -290,9 +225,7 @@ footer {
             </div>
         </div>
     </div>
-    <amp-auto-ads type="adsense"
-        data-ad-client="ca-pub-4335292454532252">
-</amp-auto-ads>
+    
     <!-- --------about-------->
     <div id="about">
         <div class="container">
@@ -348,7 +281,7 @@ footer {
                 <div class="fw-reachus">
                     <div class="reach-email">
                         <span class="mb-2">Email Us</span>
-                        <p><i class="far fa-envelope"></i> <a href="mailto: arjunupadhyay933@gmail.com" title="mail to arjunupadhyay933@gmail.com" class="_click_record b-email link-hover" data-websiteid="1370708" data-type="email"> arjunupadhyay933@gmail.com </a></p>
+                        <p><i class="far fa-envelope"></i> <a href="/cdn-cgi/l/email-protection#e3c3829189968d969382878b9a829adad0d0a3848e828a8fcd808c8e" title="mail to arjunupadhyay933@gmail.com" class="_click_record b-email link-hover" data-websiteid="1370708" data-type="email"> <span class="__cf_email__" data-cfemail="3554475f405b404554515d4c544c0c0606755258545c591b565a58">[email&#160;protected]</span> </a></p>
                     </div>
                     <div class="reach-phone">
                         <span class="mb-2">Call Us</span>
@@ -480,7 +413,7 @@ footer {
     <div id="google_translate_element2"></div>
 
 
-    <script type="text/javascript">
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript">
         function googleTranslateElementInit2() {
             new google.translate.TranslateElement({
                 pageLanguage: 'en',
@@ -523,6 +456,8 @@ footer {
         <p>Copyright &copy; <span id="currentYear"></span> Arjun Upadhyaya | All Rights Reserved.</p>
     </div>
     </div>
+    </div>
+    
     <script>
         const scriptURL = 'https://script.google.com/macros/s/AKfycbxE1S3mT9Ir76s6sse97CYSa31vZZgq_xANgvmP6uqHWR36amayC2Wt1J9ouVW8Zi3g/exec'
         const form = document.forms['submit-to-google-sheet']
@@ -590,61 +525,33 @@ setInterval(fetchSubscriberCount, 5000);
 fetchSubscriberCount();
 
   </script>
-<script>
-        document.addEventListener('DOMContentLoaded', () => {
-    const loaderContainer = document.querySelector('.loader-container');
-    const websiteContent = document.querySelector('.website-content');
-    const progressFill = document.querySelector('.progress-fill');
-
-    function simulateLoadingBasedOnSpeed() {
-        return new Promise((resolve) => {
-            let duration = 3000; // Default duration in milliseconds
-
-            // Check if the Network Information API is available
-            if ('connection' in navigator && 'effectiveType' in navigator.connection) {
-                const connection = navigator.connection;
-                switch (connection.effectiveType) {
-                    case 'slow-2g':
-                        duration = 10000;
-                        break;
-                    case '2g':
-                        duration = 7000;
-                        break;
-                    case '3g':
-                        duration = 5000;
-                        break;
-                    case '4g':
-                        duration = 3000;
-                        break;
-                    default:
-                        duration = 3000;
-                }
-            }
-
-            let progress = 0;
-            const interval = setInterval(() => {
-                progress += 1;
-                progressFill.style.width = `${progress}%`;
-                if (progress >= 100) {
-                    clearInterval(interval);
-                    resolve();
-                }
-            }, duration / 100);
+  <script>
+    function simulateLoading(loadTime) {
+        return new Promise(resolve => {
+            setTimeout(() => {
+                document.getElementById('loader-overlay').style.display = 'none';
+                document.getElementById('your-website-content').style.display = 'block';
+                resolve();
+            }, loadTime);
         });
     }
 
-    simulateLoadingBasedOnSpeed().then(() => {
-        loaderContainer.style.opacity = '0';
-        loaderContainer.style.pointerEvents = 'none';
-        websiteContent.style.opacity = '1';
-    }).catch((error) => {
-        console.error('Error during loading:', error);
-        loaderContainer.style.opacity = '0';
-        loaderContainer.style.pointerEvents = 'none';
-        websiteContent.style.opacity = '1';
-    });
-});
-    </script>
+    async function loadWebsite() {
+        const startTime = performance.now();
+        await simulateLoading(3000); // Simulate a 3-second loading time
+        const endTime = performance.now();
+        const loadTime = endTime - startTime;
+
+        if (loadTime < 4000) {
+            console.log("Fast connection detected. Website loaded quickly.");
+        } else {
+            console.log("Slow connection detected. Loading took longer.");
+        }
+    }
+
+    // Start loading when the page is ready
+    document.addEventListener('DOMContentLoaded', loadWebsite);
+</script>
 </body>
 
 </html>
