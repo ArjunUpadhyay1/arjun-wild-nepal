@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --background-color: #f0f2f5;
+    --form-background: #ffffff;
+    --text-color: #333333;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    background-image: 
+        radial-gradient(circle at 100% 150%, var(--background-color) 24%, white 24%, white 28%, var(--background-color) 28%, var(--background-color) 36%, white 36%, white 40%, transparent 40%, transparent),
+        radial-gradient(circle at 0    150%, var(--background-color) 24%, white 24%, white 28%, var(--background-color) 28%, var(--background-color) 36%, white 36%, white 40%, transparent 40%, transparent),
+        radial-gradient(circle at 50%  100%, white 10%, var(--background-color) 10%, var(--background-color) 23%, white 23%, white 30%, var(--background-color) 30%, var(--background-color) 43%, white 43%, white 50%, var(--background-color) 50%, var(--background-color) 63%, white 63%, white 71%, transparent 71%, transparent),
+        radial-gradient(circle at 100% 50%, white 5%, var(--background-color) 5%, var(--background-color) 15%, white 15%, white 20%, var(--background-color) 20%, var(--background-color) 29%, white 29%, white 34%, var(--background-color) 34%, var(--background-color) 44%, white 44%, white 49%, transparent 49%, transparent),
+        radial-gradient(circle at 0    50%, white 5%, var(--background-color) 5%, var(--background-color) 15%, white 15%, white 20%, var(--background-color) 20%, var(--background-color) 29%, white 29%, white 34%, var(--background-color) 34%, var(--background-color) 44%, white 44%, white 49%, transparent 49%, transparent);
+    background-size: 100px 50px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.cover-letter, .form-container {
+    flex: 1 1 45%;
+    padding: 30px;
+    border-radius: 15px;
+    background-color: aliceblue;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.cover-letter:hover, .form-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+h1 {
+    text-align: center;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    font-size: 2rem;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background-color: var(--primary-color);
+}
+
+form {
+    display: grid;
+    gap: 20px;
+}
+
+label {
+    font-weight: 600;
+    color: var(--secondary-color);
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+input:focus, select:focus {
+    outline: none;
+    background-color: white;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.3);
+}
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    transition: all 0.5s;
+}
+
+button:hover::before {
+    left: 100%;
+}
+
+button:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+#generatedLetter {
+            white-space: pre-wrap;
+            background-color: #fbffff;
+            border: 1px solid #eafaff;
+            padding: 20px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            width: 105%;
+            max-height: none; /* Remove any height limits */
+            overflow: visible; /* Ensure all content is shown */
+}
+
+#generatedLetter img {
+    max-width: 100%;
+    height: auto;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.checkbox-container input[type="checkbox"] {
+    width: auto;
+}
+
+#photoPreview {
+    max-width: 200px;
+    max-height: 200px;
+    margin-top: 10px;
+    border-radius: 8px;
+    display: none;
+}
+
+.signature-line {
+            position: relative; /* Signiture लाई सिफ्ट गर्न */
+    font-size: 16px; /* आवश्यक अनुसार text को साइज */
+    left: -80px; /* Signiture लाई लेफ्टमा सार्न */
+    top: -60px; /* Signiture लाई माथि सार्न */
+}
+
+.signature-line::before {
+    content: '____________________'; /* लाइनको representation */
+    position: absolute; /* लाइनको स्थान स्थिर गर्न */
+    top: -10px; /* लाइनको स्थान फिक्स गर्न */
+    left: 50px; /* लाइनको स्थान फिक्स गर्न */
+    transform: translate(220px, -10px); /* आवश्यक अनुसार स्थान व्यवस्थापन */
+}
+
+.download-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.spinner {
+    background-color: #eafaff;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column-reverse;
+    }
+    .cover-letter, .form-container {
+        flex: 1 1 100%;
+    }
+}
+
+@media print {
+    .form-container, .download-buttons {
+        display: none;
+    }
+    .cover-letter {
+        box-shadow: none;
+        padding: 0;
+    }
+    #generatedLetter {
+        border: none;
+        padding: 0;
+        max-height: none;
+        overflow-y: visible;
+    }
+}
+
+.domain-input {
+    margin-bottom: 20px;
+}
+
+.domain-flex {
+    display: flex;
+    gap: 10px;
+}
+
+.domain-flex input {
+    flex-grow: 1;
+}
+
+.domain-flex select {
+    width: auto;
+}
+
+.form-container {
+    gap: 2px;
+    background: linear-gradient(145deg, #f6fcfd, #ebf8f0);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+input:hover, select:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.download-buttons button {
+    background: linear-gradient(45deg, #3498db, #2980b9);
+    transition: all 0.3s ease;
+}
+
+.download-buttons button:hover {
+    background: linear-gradient(45deg, #2980b9, #3498db);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.2);
+}
+
+.form-container {
+    animation: formAppear 0.5s ease-out;
+}
+
+@keyframes formAppear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--primary-color);
+    border-radius: 4px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+input[type="checkbox"]:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+input[type="checkbox"]:checked::before {
+    content: '✓';
+    display: block;
+    text-align: center;
+    color: white;
+    font-size: 14px;
+    line-height: 18px;
+}

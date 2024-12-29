@@ -1,0 +1,21 @@
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Generate Cover Letter for .com.np Domain",
+    "description": "Easily create a professional cover letter for .com.np domain registration. 100% free and user-friendly.",
+    "url": "https://arjunupadhyaya.com.np/cover-letter-for-com-np-domain",
+    "image": "https://arjunupadhyaya.com.np/cover letter thumnail.png",
+    "author": {
+      "@type": "Person",
+      "name": "YourWebsite"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "YourWebsite",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://arjunupadhyaya.com.np/a logo.png"
+      }
+    }
+  }
+  
