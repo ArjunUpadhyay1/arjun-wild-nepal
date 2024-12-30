@@ -183,7 +183,7 @@
                     <li><a href="#about">about</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <li><a href="https://arjunupadhyaya.com.np/blog">Blog</a></li>
-                   <li><a href="https://arjunupadhyaya.com.np/cover-letterr">Cover letter</a></li>
+                    <li><a href="https://arjunupadhyaya.com.np/cover-letter">Cover Letter</a></li>
 
                     <i class="fa-solid fa-xmark" onclick="closememu()"></i>
                 </ul>
@@ -524,6 +524,11 @@ fetchSubscriberCount();
     // Start loading when the page is ready
     document.addEventListener('DOMContentLoaded', loadWebsite);
 </script>
+    <script>
+        if (window.location.pathname === "/cover-letter") {
+            window.location.replace("/letter.html");
+        }
+    </script>
 </body>
 
 </html>
