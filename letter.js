@@ -150,3 +150,11 @@ fetch('letter.json') // नयाँ नाम प्रयोग
     document.head.appendChild(scriptTag);
 })
 .catch(error => console.error('Error loading JSON:', error));
+// =====================================================url change============================================================
+ // Get the current path
+        var path = window.location.pathname;
+
+        // Redirect if path matches "/cover-letter"
+        if (path === "/cover-letter") {
+            window.location.replace("/letter.html");
+        } 
